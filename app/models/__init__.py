@@ -1,2 +1,2 @@
-from .business_unit import Business_Unit
+from .business_unit import BusinessUnit
 from .user import User

@@ -12,4 +12,4 @@ class User(DB.Model):
 	mobile = DB.Column(DB.String(64), nullable=False)
 	first_name = DB.Column(DB.String(64), nullable=False)
 	last_name = DB.Column(DB.String(64), nullable=False)
-	business_unit = DB.Column(DB.Integer, DB.ForeignKey('business_unit.id'))
+	business_unit_id = DB.Column(DB.Integer, DB.ForeignKey('business_unit.id'))
