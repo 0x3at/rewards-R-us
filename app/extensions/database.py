@@ -8,7 +8,7 @@ DB = _db = SQLAlchemy()
 def register_extension(app):
     DB.init_app(app)
 
-    from ..models import BusinessUnit, User
+    from ..models import Companies, User
 
     with app.app_context():
         DB.create_all()
