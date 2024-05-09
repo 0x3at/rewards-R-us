@@ -51,6 +51,13 @@ def test_get_multiple_users(DB_session):
     assert users[1].id == 2
 
 
+def test_get_100_users(DB_session):
+    list_of_ids = [x for x in range(1, 100)]
+    users = UserInterface.get(list_of_ids)
+    for i in range(len(users)):
+        assert users[i].id == i + 1
+
+
 def test_get_user_by_username(DB_session):
     user = UserInterface.get(username="user1")
     assert user is not None
@@ -107,3 +114,35 @@ def test_invalid_arg_types(DB_session):
         UserInterface.get(123, username="user1")
     with pytest.raises(KeyError):
         UserInterface.get(email="123")
+
+
+def test_update_single_attribute(DB_session):
+    user = User.query.get(1)
+    updated_user = UserInterface.update_nonsecure(user=user, role="test")
+    assert updated_user.role == "test"
+
+
+def test_update_multiple_attributes(DB_session):
+    user = User.query.get(2)
+    updated_user = UserInterface.update_nonsecure(
+        user=user, role="admin", first_name="Taylor"
+    )
+    assert updated_user.role == "admin"
+    assert updated_user.first_name == "Taylor"
+
+
+def test_update_non_existent_user(DB_session):
+    with pytest.raises(KeyError):
+        UserInterface.update_nonsecure(user=User(id=1000))
+
+
+def test_update_no_arguments(DB_session):
+    with pytest.raises(KeyError):
+        UserInterface.update_nonsecure()
+
+
+def test_update_invalid_arguments(DB_session):
+    with pytest.raises(KeyError):
+        UserInterface.update_nonsecure(user="invalid_user_object")
+    with pytest.raises(KeyError):
+        UserInterface.update_nonsecure(user=User(id=1), invalid_arg="invalid_value")
