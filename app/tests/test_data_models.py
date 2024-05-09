@@ -40,7 +40,7 @@ def DB_session(app):
         
     
 
-def test_qa_db(DB_session):
+def test_qa_setup(DB_session):
     user = User.query.first()
     assert user is not None
     
