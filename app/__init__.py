@@ -1,8 +1,8 @@
 from flask import Flask
 from .extensions import(
     database,
-    logger
-    
+    logger,
+    restful
 )
 
 
@@ -15,6 +15,7 @@ def create_app():
 
     database.register_extension(app)
     logger.register_extension(app)
+    restful.register_extension(app)
 
     app.logger.info("Server build process completed...")
     return app

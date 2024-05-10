@@ -145,5 +145,5 @@ class UserInterface:
         return user
 
     @staticmethod
-    def update_secure():
-        pass
+    def get_all():
+	    return User.query.all()
