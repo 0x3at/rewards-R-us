@@ -3,7 +3,7 @@ from typing import Union
 from flask import current_app
 from sqlalchemy.exc import SQLAlchemyError
 
-from ...models import User
+from ...models import Users
 
 from ...extensions.database import DB
 
@@ -27,7 +27,7 @@ class UserInterface:
 
     @staticmethod
     def get_all():
-        all_users = [user.sanitize() for user in User.query.all()]
+        all_users = [user.sanitize() for user in Users.query.all()]
         return all_users
 
     @staticmethod
