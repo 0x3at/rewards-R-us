@@ -2,7 +2,7 @@ import time
 from ..extensions.database import DB
 
 
-class User(DB.Model):
+class Users(DB.Model):
     """
     Represents a user in the database.
 
@@ -45,4 +45,6 @@ class User(DB.Model):
             "mobile": self.mobile,
             "first_name": self.first_name,
             "last_name": self.last_name,
+            "company_id": self.company_id,
+            "created_at": self.created_at
         }
