@@ -51,8 +51,10 @@ class UserInterface:
                     user = User.query.filter_by(**{key: value}).first()
                     if user is None:
                         raise KeyError(f"User with [{key} : {value}] does not exist")
-                    
-                    current_app.logger.info(f"User with [{key} : {value}] retrieved successfully")
+
+                    current_app.logger.info(
+                        f"User with [{key} : {value}] retrieved successfully"
+                    )
                     return user
 
         for arg in args:
@@ -63,7 +65,7 @@ class UserInterface:
                 user = User.query.get(arg)
                 if user is None:
                     raise KeyError(f"User with id {arg} does not exist")
-                
+
                 current_app.logger.info(f"User with id {arg} retrieved successfully")
                 return user
 
@@ -77,7 +79,7 @@ class UserInterface:
 
                 if len(users) == 0:
                     raise KeyError(f"None of the users with ids {arg} exist")
-                
+
                 current_app.logger.info(f"Users with ids {arg} retrieved successfully")
                 return users
 
@@ -140,10 +142,10 @@ class UserInterface:
             raise SQLAlchemyError(
                 "There was an issue while updating the provided user! Changes have been reverted."
             )
-        
-        current_app.logger.info(f"User with id {user.id} updated successfully") 
+
+        current_app.logger.info(f"User with id {user.id} updated successfully")
         return user
 
     @staticmethod
     def get_all():
-	    return User.query.all()
+        return User.query.all()

@@ -1,9 +1,5 @@
 from flask import Flask
-from .extensions import(
-    database,
-    logger,
-    restful
-)
+from .extensions import database, logger, restful
 
 
 def create_app():
