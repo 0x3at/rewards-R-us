@@ -34,3 +34,15 @@ class User(DB.Model):
     first_name = DB.Column(DB.String(64), nullable=False)
     last_name = DB.Column(DB.String(64), nullable=False)
     company_id = DB.Column(DB.Integer, DB.ForeignKey("companies.id"))
+    
+    def sanitize(self):
+        return {
+            "id": self.id,
+            "username": self.username,
+            "balance": self.balance,
+            "role": self.role,
+            "email": self.email,
+            "mobile": self.mobile,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+        }
