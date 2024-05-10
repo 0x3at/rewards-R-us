@@ -1,4 +1,4 @@
-from . import UserInterface
+from ...interfaces import UserInterface
 
 
 def get_all_users():

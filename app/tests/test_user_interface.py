@@ -5,7 +5,7 @@ from app import create_app
 from app.extensions.database import DB
 from app.models.user import User
 from app.models.companies import Companies
-from app.interfaces.userinterface import UserInterface
+from app.interfaces.users.user_interface import UserInterface
 
 from . import tools
 
