@@ -6,6 +6,7 @@ from app.extensions.database import DB
 from app.models.user import User
 from app.models.companies import Companies
 from app.interfaces.users.user_interface import UserInterface
+from app.types.exceptions import LoggedError
 
 from . import tools
 
@@ -77,42 +78,42 @@ def test_get_user_by_mobile(DB_session):
 
 
 def test_invalid_user_id(DB_session):
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.get(1000)
 
 
 def test_invalid_user_ids(DB_session):
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.get([1004, 2004])
 
 
 def test_invalid_username(DB_session):
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.get(username="invalid_username")
 
 
 def test_invalid_email(DB_session):
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.get(email="invalid_email@example.com")
 
 
 def test_invalid_mobile(DB_session):
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.get(mobile="invalid_mobile")
 
 
 def test_invalid_arg_types(DB_session):
-    with pytest.raises(TypeError):
+    with pytest.raises(LoggedError):
         UserInterface.get("invalid_arg")
-    with pytest.raises(TypeError):
+    with pytest.raises(LoggedError):
         UserInterface.get(username=123)
-    with pytest.raises(TypeError):
+    with pytest.raises(LoggedError):
         UserInterface.get(email=123)
-    with pytest.raises(TypeError):
+    with pytest.raises(LoggedError):
         UserInterface.get(mobile=123)
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.get(123, username="user1")
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.get(email="123")
 
 
@@ -132,17 +133,17 @@ def test_update_multiple_attributes(DB_session):
 
 
 def test_update_non_existent_user(DB_session):
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.update_nonsecure(user=User(id=1000))
 
 
 def test_update_no_arguments(DB_session):
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.update_nonsecure()
 
 
 def test_update_invalid_arguments(DB_session):
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.update_nonsecure(user="invalid_user_object")
-    with pytest.raises(KeyError):
+    with pytest.raises(LoggedError):
         UserInterface.update_nonsecure(user=User(id=1), invalid_arg="invalid_value")
