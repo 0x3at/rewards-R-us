@@ -13,6 +13,7 @@ def register_extension(app):
         Users,
         Products,
         Transactions,
+        Invites
     )
 
     with app.app_context():
