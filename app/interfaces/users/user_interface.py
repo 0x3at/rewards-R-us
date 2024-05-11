@@ -1,42 +1,97 @@
+# type: ignore
 from typing import Union
 
 from flask import current_app
-from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 
 from ...models import Users
 
-from ...extensions.database import DB
+from ...extensions.database import DB as db
 
 
 class UserInterface:
     """Interface for querying and retrieving data from the User table."""
 
-    DB_session = DB.session
+    DB_session = db.session
 
     @staticmethod
     def get_password_hash(id):
         pass
 
     @staticmethod
-    def add():
-        pass
+    def add(
+        username,
+        password_hash,
+        balance,
+        role,
+        email,
+        mobile,
+        first_name,
+        last_name,
+        company_id,
+    ):
+        user = User(
+            username,
+            password_hash,
+            balance,
+            role,
+            email,
+            mobile,
+            first_name,
+            last_name,
+            company_id,
+        )
+        db.session.add(user)
+        db.session.commit()
 
     @staticmethod
-    def update():
-        pass
+    def update(user, updated_fields):
+        update_struct = {
+            "username": None,
+            "password_hash": None,
+            "balance": None,
+            "role": None,
+            "email": None,
+            "mobile": None,
+            "first_name": None,
+            "last_name": None,
+            "company_id": None
+        }
+        for key, value in updated_fields.items():
+            if update_struct[key]:
+                update_struct[key] = value
+            if value is not None:
+                setattr(user, key, value)
+        try:
+            db.session.commit()
+        except IntegrityError as e:
+            db.session.rollback()
+            raise e
+        except SQLAlchemyError as e:
+            db.session.rollback()
+            raise e
+        return user
 
     @staticmethod
+    # @can_throw
     def get_all():
         all_users = [user.sanitize() for user in Users.query.all()]
         return all_users
 
     @staticmethod
-    def get_one():
-        pass
+    # @can_throw
+    def get_one(id):
+        user = User.query.get(id)
+        if user is not None:
+            user.sanitize()
+            return user
+        raise KeyError()
 
     @staticmethod
-    def delete():
-        pass
+    def delete(id):
+        user = User.query.get(id)
+        db.session.delete(user)
+        db.session.commit()
 
     # @staticmethod
     # def get(*args: int | list[int], **kwargs: str):
