@@ -66,6 +66,6 @@ def register_extension(app):
     logger.addHandler(critical_handler)
 
     app.logger = logger
-    app.logger.info("Logger extension registered.")
+    app.logger.info("Logger extension registered...")
 
     return app
