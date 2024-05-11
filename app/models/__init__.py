@@ -1,2 +1,4 @@
 from .companies import Companies
-from .user import User
+from .users import Users
+from .products import Products
+from .transactions import Transactions
