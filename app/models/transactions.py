@@ -16,7 +16,7 @@ class Transactions(DB.Model):
     """
     
     id = DB.Column(DB.Integer, primary_key=True)
-    user_id = DB.Column(DB.Integer, DB.ForeignKey("user.id"))
+    user_id = DB.Column(DB.Integer, DB.ForeignKey("users.id"))
     product_id = DB.Column(DB.Integer, DB.ForeignKey("products.id"))
     quantity = DB.Column(DB.Integer, nullable=False)
     total = DB.Column(DB.Float, nullable=False)

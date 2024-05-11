@@ -43,7 +43,7 @@ def DB_session(app):
 
 def test_update_multiple_attributes(DB_session):
     with pytest.raises(IntegrityError):
-        user = User.query.get(2)
+        user = Users.query.get(2)
         UserInterface.update(
             user=user, updated_fields={"username": "user1", "email": "test.mydict@email.com"}
         )

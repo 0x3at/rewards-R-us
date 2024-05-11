@@ -2,8 +2,11 @@ import pytest
 import shutil
 from app import create_app
 from app.extensions.database import DB
+from app.extensions import database
 from app.models.users import Users
 from app.models.companies import Companies
+from app.models.products import Products
+from app.models.transactions import Transactions
 
 from . import tools
 
@@ -19,7 +22,7 @@ def app():
     )
 
     with app.app_context():
-        DB.create_all()
+            DB.create_all()
 
     yield app
 
