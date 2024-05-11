@@ -14,7 +14,7 @@ class Transactions(DB.Model):
         total (float): The total cost of the transaction.
         created_at (int): The timestamp when the transaction was created.
     """
-    
+
     id = DB.Column(DB.Integer, primary_key=True)
     user_id = DB.Column(DB.Integer, DB.ForeignKey("users.id"))
     product_id = DB.Column(DB.Integer, DB.ForeignKey("products.id"))
@@ -23,7 +23,7 @@ class Transactions(DB.Model):
     credits_spent = DB.Column(DB.Float, nullable=False)
     currency_spent = DB.Column(DB.Float, nullable=False)
     created_at = DB.Column(DB.Integer, nullable=False, default=time.time())
-    
+
     def sanitize(self):
         return {
             "id": self.id,
@@ -33,5 +33,5 @@ class Transactions(DB.Model):
             "total": self.total,
             "credits_spent": self.credits_spent,
             "currency_spent": self.currency_spent,
-            "created_at": self.created_at
+            "created_at": self.created_at,
         }

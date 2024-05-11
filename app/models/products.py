@@ -1,6 +1,7 @@
 import time
 from ..extensions.database import DB
 
+
 class Products(DB.Model):
     """
     Represents a product in the database.
@@ -12,7 +13,7 @@ class Products(DB.Model):
         stock (int): The stock of the product.
         created_at (int): The timestamp when the product was created.
     """
-    
+
     id = DB.Column(DB.Integer, primary_key=True)
     title = DB.Column(DB.String(80), nullable=False)
     description = DB.Column(DB.String(80), nullable=False)
@@ -29,5 +30,5 @@ class Products(DB.Model):
             "price": self.price,
             "status": self.status,
             "stock": self.stock,
-            "created_at": self.created_at
+            "created_at": self.created_at,
         }
