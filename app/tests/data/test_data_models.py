@@ -2,10 +2,13 @@ import pytest
 import shutil
 from app import create_app
 from app.extensions.database import DB
+from app.extensions import database
 from app.models.users import Users
 from app.models.companies import Companies
+from app.models.products import Products
+from app.models.transactions import Transactions
 
-from . import tools
+from .. import tools
 
 
 @pytest.fixture()
@@ -31,7 +34,7 @@ def app():
 def DB_session(app):
     with app.app_context():
         DB.session.begin_nested()
-        tools.setup_qa_db(DB.session, Users, Companies)
+        tools.setup_qa_db(DB.session)
         yield DB.session
         shutil.copyfile("instance/db.sqlite", "app/tests/tools/mocks/qa_db.sqlite")
         DB.session.rollback()

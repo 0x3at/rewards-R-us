@@ -4,6 +4,7 @@ import traceback
 
 from flask import current_app
 
+
 class LoggedError(Exception):
     def __init__(
         self,
@@ -33,5 +34,5 @@ class LoggedError(Exception):
         log_message += f"Keyword Arguments Passed: {self.kwargs_passed}\n"
         log_message += f"Stack Trace:\n"
         log_message += "".join(traceback.format_tb(self.exception.__traceback__))
-    
+
         current_app.logger.error(log_message)

@@ -27,14 +27,14 @@ class Users(DB.Model):
     username = DB.Column(DB.String(64), nullable=False, unique=True)
     password_hash = DB.Column(DB.String(256), nullable=False)
     balance = DB.Column(DB.Float, nullable=False, default=0.0)
-    role = DB.Column(DB.String(64), nullable=False)
+    role = DB.Column(DB.String(64), nullable=False, default="user")
     created_at = DB.Column(DB.Integer, nullable=False, default=time.time())
     email = DB.Column(DB.String(64), nullable=False, unique=True)
     mobile = DB.Column(DB.String(64), nullable=False, unique=True)
     first_name = DB.Column(DB.String(64), nullable=False)
     last_name = DB.Column(DB.String(64), nullable=False)
     company_id = DB.Column(DB.Integer, DB.ForeignKey("companies.id"))
-    
+
     def sanitize(self):
         return {
             "id": self.id,
@@ -46,5 +46,5 @@ class Users(DB.Model):
             "first_name": self.first_name,
             "last_name": self.last_name,
             "company_id": self.company_id,
-            "created_at": self.created_at
+            "created_at": self.created_at,
         }
