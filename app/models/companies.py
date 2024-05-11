@@ -21,9 +21,4 @@ class Companies(DB.Model):
     users = DB.relationship("Users", backref="company", lazy=True)
 
     def sanitize(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "created_at": self.created_at
-        }
-    
+        return {"id": self.id, "name": self.name, "created_at": self.created_at}

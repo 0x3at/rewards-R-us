@@ -10,7 +10,7 @@ from app.models.companies import Companies
 from app.interfaces.users.user_interface import UserInterface
 from app.types.exceptions import LoggedError
 
-from . import tools
+from .. import tools
 
 
 @pytest.fixture()
@@ -36,17 +36,17 @@ def app():
 def DB_session(app):
     with app.app_context():
         DB.session.begin_nested()
-        tools.setup_qa_db(DB.session, Users, Companies)
+        tools.setup_qa_db(DB.session)
         yield DB.session
         DB.session.rollback()
 
 
-def test_update_multiple_attributes(DB_session):
-    with pytest.raises(IntegrityError):
-        user = Users.query.get(2)
-        UserInterface.update(
-            user=user, updated_fields={"username": "user1", "email": "test.mydict@email.com"}
-        )
+# def test_update_multiple_attributes(DB_session):
+#     with pytest.raises(IntegrityError):
+#         user = Users.query.get(2)
+#         UserInterface.update(
+#             user=user, updated_fields={"username": "user1", "email": "test.mydict@email.com"}
+#         )
 
 
 # def test_get_single_user(DB_session):

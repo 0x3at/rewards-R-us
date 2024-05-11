@@ -1,0 +1,162 @@
+[
+    {
+        "user_id": 1,
+        "product_id": 1,
+        "quantity": 2,
+        "total": 21.98,
+        "credits_spent": 10,
+        "currency_spent": 11.98
+    },
+    {
+        "user_id": 2,
+        "product_id": 2,
+        "quantity": 1,
+        "total": 5.99,
+        "credits_spent": 0,
+        "currency_spent": 5.99
+    },
+    {
+        "user_id": 1,
+        "product_id": 3,
+        "quantity": 1,
+        "total": 15.99,
+        "credits_spent": 0,
+        "currency_spent": 15.99
+    },
+    {
+        "user_id": 2,
+        "product_id": 4,
+        "quantity": 3,
+        "total": 23.97,
+        "credits_spent": 0,
+        "currency_spent": 23.97
+    },
+    {
+        "user_id": 1,
+        "product_id": 5,
+        "quantity": 2,
+        "total": 25.98,
+        "credits_spent": 0,
+        "currency_spent": 25.98
+    },
+    {
+        "user_id": 2,
+        "product_id": 6,
+        "quantity": 1,
+        "total": 9.99,
+        "credits_spent": 0,
+        "currency_spent": 9.99
+    },
+    {
+        "user_id": 1,
+        "product_id": 7,
+        "quantity": 4,
+        "total": 47.96,
+        "credits_spent": 0,
+        "currency_spent": 47.96
+    },
+    {
+        "user_id": 2,
+        "product_id": 8,
+        "quantity": 2,
+        "total": 17.98,
+        "credits_spent": 0,
+        "currency_spent": 17.98
+    },
+    {
+        "user_id": 1,
+        "product_id": 9,
+        "quantity": 1,
+        "total": 14.99,
+        "credits_spent": 0,
+        "currency_spent": 14.99
+    },
+    {
+        "user_id": 2,
+        "product_id": 10,
+        "quantity": 3,
+        "total": 20.97,
+        "credits_spent": 0,
+        "currency_spent": 20.97
+    },
+    {
+        "user_id": 1,
+        "product_id": 11,
+        "quantity": 2,
+        "total": 27.98,
+        "credits_spent": 0,
+        "currency_spent": 27.98
+    },
+    {
+        "user_id": 2,
+        "product_id": 12,
+        "quantity": 1,
+        "total": 10.49,
+        "credits_spent": 0,
+        "currency_spent": 10.49
+    },
+    {
+        "user_id": 1,
+        "product_id": 13,
+        "quantity": 3,
+        "total": 50.97,
+        "credits_spent": 0,
+        "currency_spent": 50.97
+    },
+    {
+        "user_id": 2,
+        "product_id": 14,
+        "quantity": 2,
+        "total": 9.98,
+        "credits_spent": 0,
+        "currency_spent": 9.98
+    },
+    {
+        "user_id": 1,
+        "product_id": 15,
+        "quantity": 1,
+        "total": 18.99,
+        "credits_spent": 0,
+        "currency_spent": 18.99
+    },
+    {
+        "user_id": 2,
+        "product_id": 16,
+        "quantity": 4,
+        "total": 15.96,
+        "credits_spent": 0,
+        "currency_spent": 15.96
+    },
+    {
+        "user_id": 1,
+        "product_id": 17,
+        "quantity": 1,
+        "total": 20.99,
+        "credits_spent": 0,
+        "currency_spent": 20.99
+    },
+    {
+        "user_id": 2,
+        "product_id": 18,
+        "quantity": 2,
+        "total": 5.98,
+        "credits_spent": 0,
+        "currency_spent": 5.98
+    },
+    {
+        "user_id": 1,
+        "product_id": 19,
+        "quantity": 3,
+        "total": 68.97,
+        "credits_spent": 0,
+        "currency_spent": 68.97
+    },
+    {
+        "user_id": 2,
+        "product_id": 20,
+        "quantity": 1,
+        "total": 1.99,
+        "credits_spent": 0,
+        "currency_spent": 1.99
+    }
+]
