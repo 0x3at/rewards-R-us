@@ -1,8 +1,9 @@
 import time
+from flask_login import UserMixin
 from ..extensions.database import DB
 
 
-class Users(DB.Model):
+class Users(DB.Model,UserMixin):
     """
     Represents a user in the database.
 

@@ -16,11 +16,14 @@ class Products(DB.Model):
 
     id = DB.Column(DB.Integer, primary_key=True)
     title = DB.Column(DB.String(80), nullable=False)
+    category = DB.Column(DB.String(80), nullable=False)
     description = DB.Column(DB.String(80), nullable=False)
     price = DB.Column(DB.Float, nullable=False)
     status = DB.Column(DB.String(80), nullable=False)
     stock = DB.Column(DB.Integer, nullable=False)
     created_at = DB.Column(DB.Integer, nullable=False, default=time.time())
+    image_url = DB.Column(DB.String(80), nullable=False)
+    stars = DB.Column(DB.Integer, nullable=False)
 
     def sanitize(self):
         return {

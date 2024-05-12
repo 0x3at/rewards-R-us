@@ -1,4 +1,6 @@
 # type: ignore
+import time
+
 from ...models import Invites
 from ...utils.decorators import can_throw
 from ...extensions.database import DB as db
@@ -10,10 +12,7 @@ class InviteInterface:
     def add(company_id, expiration, role, email):
         try:
             invite = Invites(
-                company_id=company_id,
-                expiration=expiration,
-                role=role,
-                email=email
+                company_id=company_id, expiration=expiration, role=role, email=email
             )
             db.session.add(invite)
             db.session.commit()
@@ -45,6 +44,26 @@ class InviteInterface:
             raise e
 
         return invite
+    
+    @staticmethod
+    @can_throw
+    def is_invite_valid(code):
+        try:
+            invite = Invites.query.filter_by(code=code).first()
+            
+            if invite is None:
+                return False
+            
+            if invite.consumed:
+                return False
+            
+            if invite.expiration < time.time():
+                return False
+            
+        except Exception as e:
+            raise e
+
+        return True
 
     @staticmethod
     @can_throw

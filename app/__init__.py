@@ -1,5 +1,11 @@
 from flask import Flask
-from .extensions import database, logger, restful, mail
+from .extensions import (
+    database,
+    logger,
+    restful,
+    mail,
+    auth
+    )
 
 
 def create_app():
@@ -11,8 +17,9 @@ def create_app():
 
     database.register_extension(app)
     logger.register_extension(app)
+    auth.register_extension(app)
     restful.register_extension(app)
     mail.register_extension(app)
-
+    
     app.logger.info("Server build process completed...")
     return app
