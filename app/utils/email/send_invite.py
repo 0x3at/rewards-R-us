@@ -6,6 +6,7 @@ from flask import current_app
 from app.interfaces import InviteInterface
 from app.extensions.mail import MAIL as mail
 
+
 def send_invite(email, role, company, days_before_expiration):
     """
     Sends an invite to the user.
@@ -26,5 +27,6 @@ def send_invite(email, role, company, days_before_expiration):
 
     with current_app.app_context():
         mail.send(email)
-        
+
     return invite
+

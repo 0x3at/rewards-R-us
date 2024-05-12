@@ -36,3 +36,20 @@ class LoggedError(Exception):
         log_message += "".join(traceback.format_tb(self.exception.__traceback__))
 
         current_app.logger.error(log_message)
+        
+class UnhandledLoggedError(LoggedError):
+    
+    def log_error(self):
+        log_message = f"!!!!!UNHANDLED ERROR OCCURRED DURING EXECUTION OF A CLIENT REQUEST!!!!!"
+        log_message = f"Error ID: {self.id}\n"
+        log_message += f"Function Name: {self.func_name}\n"
+        log_message += f"Message: {self.message}\n"
+        log_message += f"Timestamp: {self.timestamp}\n"
+        log_message += f"Exception Type: {type(self.exception).__name__}\n"
+        log_message += f"Exception Message: {str(self.exception)}\n"
+        log_message += f"Arguments Passed: {self.args_passed}\n"
+        log_message += f"Keyword Arguments Passed: {self.kwargs_passed}\n"
+        log_message += f"Stack Trace:\n"
+        log_message += "".join(traceback.format_tb(self.exception.__traceback__))
+
+        current_app.logger.critical(log_message)

@@ -12,5 +12,5 @@ def register_extension(app):
     api.add_resource(LoginUser, "/auth/login")
 
     app.logger.info("Endpoints registered...")
-    
+
     return api

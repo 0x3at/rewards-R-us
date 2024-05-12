@@ -1,6 +1,6 @@
 import inspect
 
-from ...types.exceptions import LoggedError
+from ...types.exceptions import LoggedError, UnhandledLoggedError
 
 
 def can_throw(func):

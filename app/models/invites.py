@@ -26,6 +26,7 @@ class Invites(DB.Model):
     )
     role = DB.Column(DB.String(80), nullable=False)
     email = DB.Column(DB.String(80), nullable=False)
+    consumed = DB.Column(DB.Boolean, nullable=False, default=False)
 
     def sanitize(self):
         return {
@@ -36,4 +37,5 @@ class Invites(DB.Model):
             "code": self.code,
             "role": self.role,
             "email": self.email,
+            "consumed": self.consumed,
         }

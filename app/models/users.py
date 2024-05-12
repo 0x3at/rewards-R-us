@@ -34,6 +34,7 @@ class Users(DB.Model):
     first_name = DB.Column(DB.String(64), nullable=False)
     last_name = DB.Column(DB.String(64), nullable=False)
     company_id = DB.Column(DB.Integer, DB.ForeignKey("companies.id"))
+    transactions = DB.relationship("Transactions", backref="user", lazy=True)
 
     def sanitize(self):
         return {

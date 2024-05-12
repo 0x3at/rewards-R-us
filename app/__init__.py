@@ -13,7 +13,6 @@ def create_app():
     logger.register_extension(app)
     restful.register_extension(app)
     mail.register_extension(app)
-    
 
     app.logger.info("Server build process completed...")
     return app

@@ -12,7 +12,7 @@ def register_extension(app):
 
     with app.app_context():
         DB.create_all()
-        
+
     app.logger.info("Database extension registered...")
 
     return DB
