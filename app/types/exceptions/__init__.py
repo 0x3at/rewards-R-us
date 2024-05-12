@@ -1,1 +1,1 @@
-from .logged_error import LoggedError
+from .logged_error import LoggedError, UnhandledLoggedError

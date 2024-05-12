@@ -1,6 +1,7 @@
 # type: ignore
-from werkzeug.security import check_password_hash
+from flask import current_app
 
+from werkzeug.security import check_password_hash
 
 from ...models import Users
 from ...utils.decorators import can_throw
