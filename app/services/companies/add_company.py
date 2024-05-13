@@ -12,12 +12,21 @@ def add_company(name: str, admin_email:str)-> Response:
 
     try:
         company = CompanyInterface.add(name)
-        invite = InviteInterface.add(
-            company_id=company.id,
-            expiration=int(time.time()) + 3 * 24 * 60 * 60,
-            role="admin",
-            email=admin_email,
-        )
+        try:
+            invite = InviteInterface.add(
+                company_id=company.id,
+                expiration=int(time.time()) + 3 * 24 * 60 * 60,
+                role="admin",
+                email=admin_email,
+            )
+        except Exception as e:
+                invite = InviteInterface.add(
+                company_id=company.id,
+                expiration=int(time.time()) + 3 * 24 * 60 * 60,
+                role="admin",
+                email=admin_email,
+                )
+                
         send_invite(email=admin_email, invite=invite, company=company)
 
         response = make_response(

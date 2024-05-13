@@ -18,7 +18,6 @@ def register_user(
     first_name: str,
     last_name: str,
 )-> Response:
-    response_headers = {"Content-Type": "application/json"}
 
     validity_check = {
         "username": len(username) > 3,
@@ -64,5 +63,4 @@ def register_user(
 
         response.status_code = 400
     
-    response.headers = response_headers
     return response
