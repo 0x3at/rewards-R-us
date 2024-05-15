@@ -4,7 +4,8 @@ from .extensions import (
     logger,
     restful,
     mail,
-    auth
+    auth,
+    cors
     )
 
 
@@ -17,6 +18,7 @@ def create_app():
 
     database.register_extension(app)
     logger.register_extension(app)
+    cors.register_extension(app)
     auth.register_extension(app)
     restful.register_extension(app)
     mail.register_extension(app)
