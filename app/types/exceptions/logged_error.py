@@ -2,7 +2,7 @@ import secrets
 import time
 import traceback
 
-from flask import current_app
+from flask import current_app, make_response
 
 
 class LoggedError(Exception):
@@ -21,6 +21,17 @@ class LoggedError(Exception):
         self.exception = exception
         self.kwargs_passed = kwargs_passed
         self.args_passed = args_passed
+        self.response = make_response(
+            {
+                "message": "Internal server error",
+                "error": {
+                    "id": self.id,
+                    "func_name": self.func_name,
+                    "message": str(self.exception),
+                },
+            }
+        )
+        self.response.status_code = 500
         self.log_error()
 
     def log_error(self):
@@ -36,3 +47,23 @@ class LoggedError(Exception):
         log_message += "".join(traceback.format_tb(self.exception.__traceback__))
 
         current_app.logger.error(log_message)
+
+
+class UnhandledLoggedError(LoggedError):
+
+    def log_error(self):
+        log_message = (
+            f"!!!!!UNHANDLED ERROR OCCURRED DURING EXECUTION OF A CLIENT REQUEST!!!!!"
+        )
+        log_message = f"Error ID: {self.id}\n"
+        log_message += f"Function Name: {self.func_name}\n"
+        log_message += f"Message: {self.message}\n"
+        log_message += f"Timestamp: {self.timestamp}\n"
+        log_message += f"Exception Type: {type(self.exception).__name__}\n"
+        log_message += f"Exception Message: {str(self.exception)}\n"
+        log_message += f"Arguments Passed: {self.args_passed}\n"
+        log_message += f"Keyword Arguments Passed: {self.kwargs_passed}\n"
+        log_message += f"Stack Trace:\n"
+        log_message += "".join(traceback.format_tb(self.exception.__traceback__))
+
+        current_app.logger.critical(log_message)

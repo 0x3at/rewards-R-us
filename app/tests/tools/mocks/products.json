@@ -1,142 +1,112 @@
 [
     {
-        "title": "Product 1",
+        "title": "Sion Softside Expandable Roller Luggage, Black, Checked-Large 29-Inch",
+        "category": "cutting",
         "description": "Description for Product 1",
         "price": 10.99,
         "status": "available",
-        "stock": 100
+        "stock": 100,
+        "image_url": "https://m.media-amazon.com/images/I/815dLQKYIYL._AC_UL320_.jpg",
+        "stars": 3
     },
     {
-        "title": "Product 2",
+        "title": "Luggage Sets Expandable PC+ABS Durable Suitcase Double Wheels TSA Lock Blue",
+        "category": "morning",
         "description": "Description for Product 2",
         "price": 5.99,
         "status": "available",
-        "stock": 50
+        "stock": 50,
+        "image_url": "https://m.media-amazon.com/images/I/81bQlm7vf6L._AC_UL320_.jpg",
+        "stars": 4
     },
     {
-        "title": "Product 3",
+        "title": "Platinum Elite Softside Expandable Checked Luggage, 8 Wheel Spinner Suitcase, TSA Lock, Men and Women",
+        "category": "spend",
         "description": "Description for Product 3",
         "price": 15.99,
         "status": "available",
-        "stock": 75
+        "stock": 75,
+        "image_url": "https://m.media-amazon.com/images/I/71EA35zvJBL._AC_UL320_.jpg",
+        "stars": 5
     },
     {
-        "title": "Product 4",
+        "title": "Freeform Hardside Expandable with Double Spinner Wheels, Navy, 2-Piece Set (21/28)",
+        "category": "dig",
         "description": "Description for Product 4",
         "price": 7.99,
         "status": "available",
-        "stock": 200
+        "stock": 200,
+        "image_url": "https://m.media-amazon.com/images/I/91k6NYLQyIL._AC_UL320_.jpg",
+        "stars": 5
     },
     {
-        "title": "Product 5",
+        "title": "Winfield 2 Hardside Expandable Luggage with Spinner Wheels, Checked-Large 28-Inch, Deep Blue",
+        "category": "evidence",
         "description": "Description for Product 5",
         "price": 12.99,
         "status": "available",
-        "stock": 80
+        "stock": 80,
+        "image_url": "https://m.media-amazon.com/images/I/61NJoaZcP9L._AC_UL320_.jpg",
+        "stars": 5
     },
     {
-        "title": "Product 6",
+        "title": "Maxlite 5 Softside Expandable Luggage with 4 Spinner Wheels, Lightweight Suitcase, Men and Women, Sa",
+        "category": "draw",
         "description": "Description for Product 6",
         "price": 9.99,
         "status": "available",
-        "stock": 150
+        "image_url": "https://m.media-amazon.com/images/I/61LnBNsSBSL._AC_UL320_.jpg",
+        "stock": 150,
+        "stars": 4
     },
     {
-        "title": "Product 7",
+        "title": "Hard Shell Carry on Luggage Airline Approved, Carry on Suitcases with Wheels, Lightweight PC Luminou",
+        "category": "tea",
         "description": "Description for Product 7",
         "price": 11.99,
         "status": "available",
-        "stock": 120
+        "stock": 120,
+        "image_url": "https://m.media-amazon.com/images/I/71CghLYrnAL._AC_UL320_.jpg",
+        "stars": 1
     },
     {
-        "title": "Product 8",
+        "title": "Maxporter II 30 Hardside Spinner Trunk Luggage, Expandable, Navy",
+        "image_url": "https://m.media-amazon.com/images/I/81f3h+YHOXL._AC_UL320_.jpg",
+        "category": "six",
         "description": "Description for Product 8",
         "price": 8.99,
         "status": "available",
-        "stock": 90
+        "stock": 90,
+        "stars": 1
     },
     {
-        "title": "Product 9",
+        "title": "Maxlite 5 Hardside Expandable Spinner Wheel Luggage, Black, Carry-On 21-Inch",
+        "image_url": "https://m.media-amazon.com/images/I/81f64DkIStL._AC_UL320_.jpg",
+        "category": "offer",
         "description": "Description for Product 9",
         "price": 14.99,
         "status": "available",
-        "stock": 60
+        "stock": 60,
+        "stars": 3
     },
     {
-        "title": "Product 10",
+        "title": "3 Piece Luggage Sets Hardshell Spinner Luggage with Spinner Wheels Hard Shell",
+        "image_url": "https://m.media-amazon.com/images/I/81W9HzSmjHL._AC_UL320_.jpg",
+        "category": "tonight",
         "description": "Description for Product 10",
         "price": 6.99,
         "status": "available",
-        "stock": 110
+        "stock": 110,
+        "stars": 3
     },
     {
-        "title": "Product 11",
+        "title": "Underseat Carry-On Luggage with USB Port, Black, 14-Inch",
+        "image_url": "https://m.media-amazon.com/images/I/81QYqHDsZoL._AC_UL320_.jpg",
+        "category": "here",
         "description": "Description for Product 11",
         "price": 13.99,
         "status": "available",
-        "stock": 70
-    },
-    {
-        "title": "Product 12",
-        "description": "Description for Product 12",
-        "price": 10.49,
-        "status": "available",
-        "stock": 130
-    },
-    {
-        "title": "Product 13",
-        "description": "Description for Product 13",
-        "price": 16.99,
-        "status": "available",
-        "stock": 40
-    },
-    {
-        "title": "Product 14",
-        "description": "Description for Product 14",
-        "price": 4.99,
-        "status": "available",
-        "stock": 180
-    },
-    {
-        "title": "Product 15",
-        "description": "Description for Product 15",
-        "price": 18.99,
-        "status": "available",
-        "stock": 25
-    },
-    {
-        "title": "Product 16",
-        "description": "Description for Product 16",
-        "price": 3.99,
-        "status": "available",
-        "stock": 300
-    },
-    {
-        "title": "Product 17",
-        "description": "Description for Product 17",
-        "price": 20.99,
-        "status": "available",
-        "stock": 20
-    },
-    {
-        "title": "Product 18",
-        "description": "Description for Product 18",
-        "price": 2.99,
-        "status": "available",
-        "stock": 250
-    },
-    {
-        "title": "Product 19",
-        "description": "Description for Product 19",
-        "price": 22.99,
-        "status": "available",
-        "stock": 15
-    },
-    {
-        "title": "Product 20",
-        "description": "Description for Product 20",
-        "price": 1.99,
-        "status": "available",
-        "stock": 400
+        "stock": 70,
+        "stars": 5
     }
 ]

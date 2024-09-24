@@ -1,8 +1,9 @@
 import time
+from flask_login import UserMixin
 from ..extensions.database import DB
 
 
-class Users(DB.Model):
+class Users(DB.Model,UserMixin):
     """
     Represents a user in the database.
 
@@ -34,6 +35,7 @@ class Users(DB.Model):
     first_name = DB.Column(DB.String(64), nullable=False)
     last_name = DB.Column(DB.String(64), nullable=False)
     company_id = DB.Column(DB.Integer, DB.ForeignKey("companies.id"))
+    transactions = DB.relationship("Transactions", backref="user", lazy=True)
 
     def sanitize(self):
         return {

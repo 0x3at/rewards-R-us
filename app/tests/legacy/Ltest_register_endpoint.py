@@ -53,6 +53,7 @@ def test_register_user(client):
             f"""Test Register User Response: {response.json}\n==============\n    endpoint: /auth/register\n==============\n   data: {data}\n==============\n"""
         )
 
+
 def test_register_user_invalid(client):
     data = {
         "username": "tes",
