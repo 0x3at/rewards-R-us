@@ -12,6 +12,11 @@ class UserInterface:
 
     @staticmethod
     @can_throw
+    def call_table()->Users:
+        return Users
+
+    @staticmethod
+    @can_throw
     def add(
         username,
         password_hash,

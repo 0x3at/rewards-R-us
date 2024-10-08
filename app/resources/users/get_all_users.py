@@ -1,9 +1,10 @@
 from flask import jsonify
-from flask_restful import Resource
-from ...services.users import get_all_users
+from flask_restful import Resource, reqparse
+from ...services.admin import get_all_users
 
+parser = reqparse.RequestParser()
 
 class GetAllUsers(Resource):
     def get(self):
-        users = get_all_users()
-        return jsonify(users)
+        response = get_all_users()
+        return response
