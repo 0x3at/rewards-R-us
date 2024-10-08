@@ -1,6 +1,6 @@
 # rewards-R-us
 
-Description of the project.
+IN PROGRESS DOCUMENTATION
 
 ## Table of Contents
 
